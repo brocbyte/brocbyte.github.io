@@ -3,7 +3,7 @@ tags: windows
 ---
 
 ## The Unicode Problem in 2023
-<img src="https://raw.githubusercontent.com/whybroccoli/whybroccoli.github.io/main/img/unravel.jpg" alt="UnravelTwo">
+<img src="https://raw.githubusercontent.com/brocbyte/brocbyte.github.io/main/img/unravel.jpg" alt="UnravelTwo">
 
 You launch a game, play for a while, exit. Relaunch and... nothing was saved :(
 
@@ -18,7 +18,7 @@ You can debug the game a little!
 
 Our patient, when opened using ImHex (strings search) shows this:
 
-<img src="https://raw.githubusercontent.com/whybroccoli/whybroccoli.github.io/main/img/unraveltwo_binary.png" alt="ImHex output">
+<img src="https://raw.githubusercontent.com/brocbyte/brocbyte.github.io/main/img/unraveltwo_binary.png" alt="ImHex output">
 
 We've got an 'LOCALAPPDATA' entry here. It is a name of an environmental variable on Windows, pointing to personal user's folder.
 
