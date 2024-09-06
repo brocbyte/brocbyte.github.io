@@ -16,15 +16,14 @@ My passion is to dig deeper into software and fight for high performance and smo
 
 ### Software Engineer. [Ledas](https://ledas.com/) (2022 Jun - Now)
 
-- #### Project: [Client-server CAD application for orthodontics](https://ledas.com/en/expertise/3d-medical-software/)
-
-    - Sped up a mesh-to-mesh distance calculation algorithm using uniform grid for raycasting instead of Bounding Volume Hierarchy (Typescript, C++)
-    - Mesh processing (fill mesh holes, flip normals) (C++, VTK)
-    - Automatic tool for editing distance between meshes (Typescript, three.js)
+- #### Project: [Client-server CAD application for orthodontics (C++/Typescript)](https://ledas.com/en/expertise/3d-medical-software/)
+    - Used third-party libraries for basic operations on 3D meshes (OpenMesh, Assimp, VTK, draco, three.js)
+    - Implemented some computational geometry algorithms:
+        - Sped up a mesh-to-mesh distance calculation algorithm using uniform grid for raycasting instead of Bounding Volume Hierarchy
+        - Mesh processing (fill mesh holes, computing normals)
+        - Automatic tool for editing distance between meshes
+        - Client-based model construction was sped up by reusing BVH-instances between meshes (Typescript, three.js)
     - Used [emscripten](https://emscripten.org/) to build server-side mesh-processing code (C++) into wasm modules to reuse code on the client and reduce network communication
-    - Fixed bugs & implemented features using open-source external libraries (OpenMesh, Assimp)
-    - Mesh loading stage was sped up using [draco](https://google.github.io/draco/) library for mesh compression. It was included in an existent Websocket-based message communication. (Typescript, C++, CMake)
-    - Client-based model construction was sped up by reusing BVH-instances between meshes (Typescript, three.js)
 
 - #### Project: Geometric constraint solver application for orthodontics
     - Implemented a visualization technique translating 2D points into 3D
