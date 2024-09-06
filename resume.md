@@ -25,7 +25,9 @@ My passion is to dig deeper into software and fight for high performance and smo
     - Fixed bugs & implemented features using open-source external libraries (OpenMesh, Assimp)
     - Mesh loading stage was sped up using [draco](https://google.github.io/draco/) library for mesh compression. It was included in an existent Websocket-based message communication. (Typescript, C++, CMake)
     - Client-based model construction was sped up by reusing BVH-instances between meshes (Typescript, three.js)
+
 ---
+
 - #### Project: Geometric constraint solver application for orthodontics
     - Implemented a visualization technique translating 2D points into 3D
 
