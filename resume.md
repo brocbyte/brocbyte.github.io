@@ -19,8 +19,8 @@ My passion is to dig deeper into software and fight for high performance and smo
 - mesh processing: OpenMesh, VTK, Assimp
 - graphic APIs: OpenGL, Vulkan, WebGL
 - winapi (DirectSound, CoreAudio), X11
-- CMake, Git, SVN, conan, Emscripten
-- Agile, team communication
+- CMake, Git, SVN, conan, Emscripten, selenium
+- Agile, Jira, team communication
 - English - C1
 
 ## Working Experience
