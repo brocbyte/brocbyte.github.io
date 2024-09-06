@@ -15,7 +15,7 @@ My passion is to dig deeper into software and fight for high performance and smo
 
 ## Skills
 - geometric algorithms, CAD
-- C/C++, Python, Typescript, Vue.js, Three.js, wasm
+- C/C++, Python, Typescript, Vue.js, Three.js, wasm, Qt
 - mesh processing: OpenMesh, VTK, Assimp
 - graphic APIs: OpenGL, Vulkan, WebGL
 - winapi (DirectSound, CoreAudio), X11
