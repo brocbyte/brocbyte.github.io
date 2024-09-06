@@ -15,7 +15,7 @@ github_username: "brocbyte"
 #youtube_username: username
 #googleplus_username: +username
 
-theme: "jekyll-theme-midnight"
+theme: "minima"
 
 #rss: rss
 
