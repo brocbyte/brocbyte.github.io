@@ -16,14 +16,13 @@ telegram_username: "brocbyte"
 #youtube_username: username
 #googleplus_username: +username
 
-theme: "minima"
-
-#rss: rss
+#theme: "minima"
+remote_theme: jekyll/minima
 
 kramdown:
   syntax_highlighter_opts:
     disable: true
-    
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -38,3 +37,8 @@ defaults:
       type: post
     values:
       tags: Other
+
+minima:
+  skin: dark
+  social_links:
+    - { platform: github,         user_url: "https://github.com/brocbyte" }

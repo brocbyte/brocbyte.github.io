@@ -3,15 +3,9 @@ layout: page
 title: Resume
 ---
 
-# Arseny Morozov CV
+# Arseny Morozov
 
 Software Engineer - 3D, geometry, performance, CAD
-
-arsmoroz@ya.ru
-
-tg: @brocbyte
-
-[https://github.com/brocbyte](https://github.com/brocbyte/)
 
 ---
 
