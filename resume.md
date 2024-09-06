@@ -18,6 +18,7 @@ My passion is to dig deeper into software and fight for high performance and smo
 - C/C++, Python, Typescript, Vue.js, Three.js, wasm, Qt
 - mesh processing: OpenMesh, VTK, Assimp
 - graphic APIs: OpenGL, Vulkan, WebGL
+- embedded: C, STM32, sensors
 - winapi (DirectSound, CoreAudio), X11
 - CMake, Git, SVN, conan, Emscripten, selenium
 - Agile, Jira, team communication
