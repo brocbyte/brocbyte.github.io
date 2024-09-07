@@ -51,11 +51,11 @@ Research topics:
 - FPGA & STM32 programming
 
 ## Pet Projects
-* Windows x86-64 user space debugger, (C, C++) [repo](https://github.com/hardworkar/oxidbg)
-* Vulkan-driven renderer (C, Vulkan) [repo](https://github.com/hardworkar/oxigine)
-* Physically-based snow simulation with Material Point Method (C++, CUDA) [repo](https://github.com/hardworkar/realtime-deformations)
-* CUDA implementation of "Real-Time Rigid Body Simulation on GPUs" (C++, CUDA, conan) [repo](https://github.com/hardworkar/cuball )
-* Unix shell: job-control (fg/bg/jobs), stdout/stderr redirection, piping, signal handling) [repo](https://github.com/hardworkar/gemsh)
-* A minimal X11 & GLX based application for OpenGL rendering without any libs (e.g. ~~GLFW~~, ~~GLAD~~) (C++, X11, OpenGL) [repo](https://github.com/hardworkar/octo)
-* Implemented a not-dictionary-based compression algorithm "CTW" (Python) [repo](https://github.com/hardworkar/ctw)
+* Windows x86-64 user space debugger, (C, C++) [repo](https://github.com/brocbyte/oxidbg)
+* Vulkan-driven renderer (C, Vulkan) [repo](https://github.com/brocbyte/oxigine)
+* Physically-based snow simulation with Material Point Method (C++, CUDA) [repo](https://github.com/brocbyte/realtime-deformations)
+* CUDA implementation of "Real-Time Rigid Body Simulation on GPUs" (C++, CUDA, conan) [repo](https://github.com/brocbyte/cuball)
+* Unix shell: job-control (fg/bg/jobs), stdout/stderr redirection, piping, signal handling) [repo](https://github.com/brocbyte/gemsh)
+* A minimal X11 & GLX based application for OpenGL rendering without any libs (e.g. ~~GLFW~~, ~~GLAD~~) (C++, X11, OpenGL) [repo](https://github.com/brocbyte/octo)
+* Implemented a not-dictionary-based compression algorithm "CTW" (Python) [repo](https://github.com/brocbyte/ctw)
 
