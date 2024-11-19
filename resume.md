@@ -11,6 +11,7 @@ tg: @brocbyte
 **Software Engineer - C++, 3D, geometry, systems programming, CAD**
 
 My passion is to dig deeper into software and fight for high performance and smooth user experience.
+
 ## Skills
 - geometric algorithms, CAD
 - C/C++, Python, Typescript, Vue.js, Three.js, wasm, Qt
@@ -21,6 +22,7 @@ My passion is to dig deeper into software and fight for high performance and smo
 - CMake, Git, SVN, conan, Emscripten, selenium
 - Agile, Jira, team communication
 - English - C1
+
 ## Working Experience
 **Software Engineer - C++/Python/Typescript. [Ledas](https://ledas.com/) (2022 Jun - Now)**
 - Project: [Client-server CAD application for orthodontics](https://ledas.com/en/expertise/3d-medical-software/)
