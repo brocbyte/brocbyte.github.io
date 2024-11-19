@@ -4,10 +4,15 @@ title: Resume
 ---
 
 **Arseny Morozov**
+
 tg: @brocbyte
+
 **Software Engineer - C++, 3D, geometry, systems programming, CAD**
+
 Solid experience in C, C++ and geometric algorithms.
+
 My passion is to dig deeper into software and fight for high performance and smooth user experience.
+
 --------------------------------------------------- **Skills** --------------------------------------------------- 
 - geometric algorithms, CAD
 - C/C++, Python, Typescript, Vue.js, Three.js, wasm, Qt
@@ -20,6 +25,7 @@ My passion is to dig deeper into software and fight for high performance and smo
 - English - C1
 
 ------------------------------------------------ **Working Experience**------------------------------------------------ 
+
 **Software Engineer - C++/Python/Typescript. [Ledas](https://ledas.com/) (2022 Jun - Now)**
 - Project: [Client-server CAD application for orthodontics](https://ledas.com/en/expertise/3d-medical-software/)
     - Triangle mesh processing algorithms using OSS libraries (OpenMesh, Assimp, VTK, draco, three.js)
@@ -38,6 +44,7 @@ My passion is to dig deeper into software and fight for high performance and smo
 
 ------------------------------------- **Education & Training: [NSU](https://english.nsu.ru/), IT department** ------------------------------------- 
 **2019-2023 -  Bachelor of Computer Science and System Design (GPA 4.98/5.0)**
+
 Research topics:
 - *Mesh processing methods for CAD applications*
 - *Fast algorithm for retrieving compressed data partially (without decompressing the whole)*
