@@ -2,9 +2,7 @@
 layout: page
 title: Resume
 ---
-
 #### Arseny Morozov
-<span>
 <table style="width:100%;">
 <tr>
 	<td>3D/Engine C++ Software Engineer<br>Male, 22<br>3 years of experience</td>
@@ -15,10 +13,8 @@ title: Resume
 	<td>English / C1<br>Russian / Native<br>btw i use vim</td>
 </tr>
 </table>
-</span>
 
 #### Skills
-<span>
 <table style="width:100%;">
 <tr>
 	<td><strong>Algorithms</strong><br>geometry, linear algebra, graphs, DP, mesh processing</td>
@@ -41,10 +37,9 @@ title: Resume
 	<td><strong>Organization</strong><br>Agile, Jira, team communication</td>
 </tr>
 </table>
-</span>
 
 #### Working Experience
-<span><table>
+<table>
 <tr><td><strong>Software Engineer - C++/Python/Typescript. <a href="https://ledas.com/">Ledas</a> (2022 - Now)</strong>
 Project A: <a href="https://ledas.com/en/expertise/3d-medical-software/">Client-server CAD/3D Engine application for orthodontics</a>
 - triangle mesh processing algorithms using OSS libraries (OpenMesh, Assimp, VTK, draco, three.js)
@@ -62,10 +57,10 @@ Project B: Geometric constraint solver for orthodontics
 <tr><td><strong>Intern - Coq/Isabelle-HOL. <a href="https://www.iis.nsk.su/en">A.P. Ershov IIS</a> (2021 Autumn)</strong>
 Project: Proving Algorithm Correctness of Java programs
 </td></tr>
-</table></span>
+</table>
 
 #### Education & Training: [NSU](https://english.nsu.ru/), IT department
-<span><table>
+<table>
 <tr><td><strong>2019-2023 -  Bachelor of Computer Science and System Design (GPA 4.98/5.0)</strong>
 Research topics:
 - Mesh processing methods for CAD applications
@@ -76,10 +71,9 @@ Research topics:
 - Signal processing (FFT, differential equations)
 - Control theory
 </td></tr>
-</table></span>
 
 #### Pet Projects
-<span><table>
+<table>
 <tr><td>Windows x86-64 user space debugger (C, C++)</td><td><a href="https://github.com/brocbyte/oxidbg">repo</a></td></tr>
 <tr><td>Triangle mesh segmentation tool (C++, OpenGL)</td><td><a href="https://github.com/brocbyte/brocseg">repo</a></td></tr>
 <tr><td>Physically-based snow simulation with Material Point Method (C++, CUDA)</td><td><a href="https://github.com/brocbyte/realtime-deformations">repo</a></td></tr>
@@ -87,5 +81,5 @@ Research topics:
 <tr><td>CUDA implementation of "Real-Time Rigid Body Simulation on GPUs" (C++, CUDA, conan)</td><td><a href="https://github.com/brocbyte/cuball">repo</a></td></tr>
 <tr><td>A minimal X11 & GLX based application for OpenGL rendering without any libs (C++, X11, OpenGL)</td><td><a href="https://github.com/brocbyte/octo">repo</a></td></tr>
 <tr><td>A not-dictionary-based compression algorithm "CTW" (Python)</td><td><a href="https://github.com/brocbyte/ctw">repo</a></td></tr>
-</table></span>
+</table>
 
