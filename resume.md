@@ -2,6 +2,7 @@
 layout: page
 title: Resume
 ---
+
 #### Arseny Morozov
 <table style="width:100%;">
 <tr>
@@ -40,21 +41,21 @@ title: Resume
 
 #### Working Experience
 <table>
-<tr><td><strong>Software Engineer - C++/Python/Typescript. <a href="https://ledas.com/">Ledas</a> (2022 - Now)</strong>
+<tr><td><strong>Software Engineer - C++/Python/Typescript. <a href="https://ledas.com/">Ledas</a> (2022 - Now)</strong><br>
 Project A: <a href="https://ledas.com/en/expertise/3d-medical-software/">Client-server CAD/3D Engine application for orthodontics</a>
-- triangle mesh processing algorithms using OSS libraries (OpenMesh, Assimp, VTK, draco, three.js)
-- mesh segmentation based on keypoints
-- mesh-to-mesh distance calculation/editing algorithm
-- BVH-instances sharing between meshes (performance)
-- 3D objects animation interpolation
-- Custom 3D view controls (gizmos)
-- 3D objects superimposition for model comparison
-- Build scripts: mesh-processing code (C++) -> wasm modules
-Project B: Geometric constraint solver for orthodontics
-- Visualization techniques based on mapping 2D points into 3D
+- triangle mesh processing algorithms using OSS libraries (OpenMesh, Assimp, VTK, draco, three.js)<br>
+- mesh segmentation based on keypoints<br>
+- mesh-to-mesh distance calculation/editing algorithm<br>
+- BVH-instances sharing between meshes (performance)<br>
+- 3D objects animation interpolation<br>
+- Custom 3D view controls (gizmos)<br>
+- 3D objects superimposition for model comparison<br>
+- Build scripts: mesh-processing code (C++) -> wasm modules<br>
+Project B: Geometric constraint solver for orthodontics<br>
+- Visualization techniques based on mapping 2D points into 3D<br>
 - Mesh processing algorithms (mesh holes filling, computing normals)
 </td></tr>
-<tr><td><strong>Intern - Coq/Isabelle-HOL. <a href="https://www.iis.nsk.su/en">A.P. Ershov IIS</a> (2021 Autumn)</strong>
+<tr><td><strong>Intern - Coq/Isabelle-HOL. <a href="https://www.iis.nsk.su/en">A.P. Ershov IIS</a> (2021 Autumn)</strong><br>
 Project: Proving Algorithm Correctness of Java programs
 </td></tr>
 </table>
@@ -71,6 +72,7 @@ Research topics:
 - Signal processing (FFT, differential equations)
 - Control theory
 </td></tr>
+</table>
 
 #### Pet Projects
 <table>
