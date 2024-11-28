@@ -19,7 +19,7 @@ title: Resume
 <h2>Skills</h2>
 <table style="width:100%;">
   <tr>
-    <td><strong>Algorithms</strong><br>geometry, linear algebra, graphs, DP, mesh processing</td>
+    <td><strong>Algorithms</strong><br>geometry, linear algebra, graphs, reverse engineering</td>
     <td><strong>Mesh Processing</strong><br>OpenMesh, VTK, Assimp</td>
   </tr>
   <tr>
@@ -71,7 +71,7 @@ title: Resume
 <h2>Education & Training: <a href="https://english.nsu.ru/">NSU, IT department</a></h2>
 <table>
   <tr>
-    <td><strong>2019-2023 - Bachelor of Computer Science and System Design (GPA 4.98/5.0)</strong>
+    <td><strong>2019-2023 - Bachelor of Computer Science and System Design (GPA 4.98/5.0)</strong><br>
       Research topics:
       <ul>
         <li>Mesh processing methods for CAD applications</li>
