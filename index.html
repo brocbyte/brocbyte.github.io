@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>brocbyte blog</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <script>
+        function openTab(tabId) {
+            var tabcontent = document.getElementById("NavigationMenu").children;
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].removeAttribute("aria-selected");
+            }
+            document.getElementById("PostsWindow").style.display = "none";
+            document.getElementById("BookmarksWindow").style.display = "none";
+            document.getElementById(tabId).setAttribute("aria-selected", "true");
+            document.getElementById(tabId + "Window").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="window" style="margin: 32px; width: 250px">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                Introduction
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <p>Hi! This is a homepage of Arseny Morozov💾</p>
+        </div>
+    </div>
+    <div class="window" style="margin: 32px; width: 250px">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                Navigation
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <menu id="NavigationMenu" role="tablist">
+            <li id="Posts" role="tab" onclick="openTab('Posts')" aria-selected="true"><a href="#tabs">Posts</a></li>
+            <li id="Bookmarks" role="tab" onclick="openTab('Bookmarks')"><a href="#tabs">Bookmarks</a></li>
+        </menu>
+        <div id="PostsWindow" class="window" role="tabpanel">
+            <div class="window-body">
+                <button style="width: 230px"><li><a href="posts/exceptional_terminology.html">Exceptional Terminology</a></li></button>
+                <button style="width: 230px"><li><a href="posts/reverse_unravel.html">Fixing Unravel Two bug w/o source code</a></li></button>
+                <button style="width: 230px"><li><a href="posts/solomonoff_induction.html">Solomonoff Induction</a></li></button>
+            </div>
+        </div>
+        <div id="BookmarksWindow" class="window" role="tabpanel" style="display: none">
+            <div class="window-body">
+                <button style="width: 230px"><li><a href="https://www.fasterthan.life/blog">I am graphics and so can you</a></li></button>
+                <button style="width: 230px"><li><a href="https://fabiensanglard.net/">Fabien Sanglard's website</a></li></button>
+                <button style="width: 230px"><li><a href="https://blog.s-schoener.com/blog/">Sebastian Schöner's blog</a></li></button>
+                <button style="width: 230px"><li><a href="https://ludic.mataroa.blog/">Ludicity</a></li></button>
+                <button style="width: 230px"><li><a href="https://danluu.com/">Danluu</a></li></button>
+                <button style="width: 230px"><li><a href="https://fgiesen.wordpress.com/">The ryg blog</a></li></button>
+                <button style="width: 230px"><li><a href="https://gargaj.github.io/demos-for-dummies/#intro/1">How to start writing an actual demo in <400 lines</a></li></button>
+                <button style="width: 230px"><li><a href="http://www.sizecoding.org/wiki/Main_Page">SizeCoding.org</a></li></button>
+                <button style="width: 230px"><li><a href="https://hugi-code.blogspot.com/">Demos For Dummies</a></li></button>
+                <button style="width: 230px"><li><a href="https://in4k.github.io/">in4k demoscene</a></li></button>
+                <button style="width: 230px"><li><a href="https://www.demoscene.ru/info/">demoscene.ru</a></li></button>
+                <button style="width: 230px"><li><a href="https://hughsk.io/">Hugh Kennedy's shaders</a></li></button>
+                <button style="width: 230px"><li><a href="https://www.computerenhance.com/p/table-of-contents">Computer, Enhance!</a></li></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

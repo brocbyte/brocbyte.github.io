@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>brocbyte blog</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+
+    <h2 id="the-unicode-problem-in-2023">The Unicode Problem in 2023</h2>
+    <p><img src="https://raw.githubusercontent.com/brocbyte/brocbyte.github.io/main/img/unravel.jpg" alt="UnravelTwo">
+    </p>
+    <p>You launch a game, play for a while, exit. Relaunch and... nothing was saved :(</p>
+    <p>A problem might happened bc you&#39;re on windows and the game of yours handles unicode poorly (oh year 2023).
+    </p>
+    <p>To fix it, you need to recreate windows user from scratch with proper eNgLisH-onLY letters in it.
+        Which is kinda lot just to play a game.</p>
+    <h2 id="or-">Or...</h2>
+    <p>You can debug the game a little!</p>
+    <p>Our patient, when opened using ImHex (strings search) shows this:</p>
+    <p><img src="https://raw.githubusercontent.com/brocbyte/brocbyte.github.io/main/img/unraveltwo_binary.png"
+            alt="ImHex output"></p>
+    <p>We&#39;ve got an &#39;LOCALAPPDATA&#39; entry here. It is a name of an environmental variable on Windows,
+        pointing to
+        personal user&#39;s folder.</p>
+    <p>The thing is, when a program wants to save sth for a single user (like a game&#39;s progress), it often has to
+        query
+        the OS for some env variable, which points to an appropriate location.</p>
+    <p>We cannot actually edit particularly &#39;LOCALAPPDATA&#39; one using standard &#39;Edit the system environment
+        variables&#39; Windows&#39;s dialog, for some reason.</p>
+    <h2 id="getting-to-know-each-other">Getting to know each other</h2>
+    <p>So, what do we do? WinAPI provides several ways for quering environment variables:</p>
+    <ul>
+        <li>
+            <p><code>DWORD GetEnvironmentVariable(LPCTSTR lpName, LPTSTR lpBuffer, DWORD nSize);</code></p>
+        </li>
+        <li>
+            <p><code>LPCH GetEnvironmentStrings();</code></p>
+        </li>
+    </ul>
+    <p>The first one returns the value of a particular variable, the second lists all of them.</p>
+    <p>Our game has to use some of those to save our progress correctly.
+        We will use <a href="http://www.rohitab.com/apimonitor">http://www.rohitab.com/apimonitor</a> to determine which
+        one
+        actually. It allows you to take a look into api-calls that a program is doing.</p>
+    <p>For e.g. we will add both <code>GetEnvironmentVariable()</code> and <code>GetEnvironmentStrings()</code> for monitoring and then launch our
+        program.
+        In the output we don&#39;t see a single <code>GetEnvironmentVariable()</code> call with &#39;LOCALAPPDATA&#39; as an
+        argument, so
+        it gets all the information it needs by calling <code>GetEnvironmentStrings()</code>.
+        If we were to enable C++RuntimeFunctions tracing too, we would actually see some &#39;strcmp&#39;-family
+        functions
+        being called on the returned value of <code>GetEnvironmentStrings()</code> :)</p>
+    <p>We could modify the actual return value of this function somehow (dll injection?), but we&#39;re stupid and
+        lazy...
+    </p>
+    <p>Or, we can go a much simpler way and just create our brand new own environment variable &#39;COCALAPPDATA&#39;!
+        Naming is poor sry. Important: the length of the name must be kept the same.</p>
+    <p>So we open our game.exe once again using ImHex. &#39;LOCALAPPDATA&#39; entry found previously can be easily
+        patched
+        to &#39;COCALAPPDATA&#39;, bc it lies in some .data region.</p>
+    <p>Then we just set a new environment variable using standard windows dialog - and sheesh, saving system is working!
+    </p>
+    <h3 id="a-note">A note</h3>
+    <p>The thing is, we didn&#39;t do anything hard at all and got the good result. Environment variables are cool!</p>
+</body>
+
+</html>

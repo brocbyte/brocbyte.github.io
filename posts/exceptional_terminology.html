@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>brocbyte blog</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+
+    <h2 id="hardware-os-exceptions-">Hardware/OS exceptions:</h2>
+    <h3 id="interrupts">interrupts</h3>
+    <p>Interrupts occur asynchronously as a result of signals from I/O devices that are external to the processor.
+        Hardware
+        interrupts are asynchronous in the sense that they are not caused by the execution of any particular
+        instruction.
+        Always returns to the next instruction.</p>
+    <h3 id="traps-syscalls">traps / syscalls</h3>
+    <p>Traps are intentional exceptions that occur as a result of executing an instruction. Used to implement system
+        calls.
+        Always returns to the next instruction.</p>
+    <h3 id="faults">faults</h3>
+    <p>Faults result from error conditions that a handler might be able to correct. When a fault occurs, the processor
+        transfers control to the fault handler. If the handler is able to correct the error condition, it returns
+        control to
+        the faulting instruction, thereby <em>reexecuting</em> it. Otherwise, the handler returns to an &#39;abort&#39;
+        routine in the kernel that terminates the application program that caused the fault.
+        Might return to current instruction.</p>
+    <h3 id="aborts">aborts</h3>
+    <p>Aborts result from unrecoverable fatal errors, typically hardware errors
+        Never returns control to the application program.</p>
+    <h3 id="signals-os-way-to-notify-user-processes-about-events">Signals = OS way to notify user processes about events
+    </h3>
+    <h4 id="group-sigfpe-sigill-sigsegv-">Group [SIGFPE, SIGILL, SIGSEGV]</h4>
+    <p>Low-level hardware exceptions are processed by the kernel’s exception handlers and would not normally be visible
+        to
+        user processes. Signals provide a mechanism for exposing the occurrence of such exceptions to user processes.
+    </p>
+    <h4 id="group-sigint-sigkill-shigchld-">Group [SIGINT, SIGKILL, SHIGCHLD]</h4>
+    <p>Other signals correspond to higher-level software events in the kernel or in other user processes</p>
+
+</body>
+
+</html>
