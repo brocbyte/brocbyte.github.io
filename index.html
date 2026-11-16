@@ -1,164 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>brocbyte blog</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
-    <script>
-        function openTab(tabId) {
-            var tabcontent = document.getElementById("NavigationMenu").children;
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].removeAttribute("aria-selected");
-            }
-            document.getElementById("PostsWindow").style.display = "none";
-            document.getElementById("BookmarksWindow").style.display = "none";
-            document.getElementById("ToolsWindow").style.display = "none";
-            document.getElementById(tabId).setAttribute("aria-selected", "true");
-            document.getElementById(tabId + "Window").style.display = "block";
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="window" style="margin: 32px; width: 250px">
-        <div class="title-bar">
-            <div class="title-bar-text">
-                Introduction
+    <main class="page">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    Introduction
+                </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
             </div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-            </div>
-        </div>
-        <div class="window-body">
-            <p>Hi! This is a homepage of Arseny Morozov💾</p>
-        </div>
-    </div>
-    <div class="window" style="margin: 32px; width: 250px">
-        <div class="title-bar">
-            <div class="title-bar-text">
-                Navigation
-            </div>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-            </div>
-        </div>
-        <menu id="NavigationMenu" role="tablist">
-            <li id="Posts" role="tab" onclick="openTab('Posts')" aria-selected="true"><a href="#tabs">Posts</a></li>
-            <li id="Bookmarks" role="tab" onclick="openTab('Bookmarks')"><a href="#tabs">Bookmarks</a></li>
-            <li id="Tools" role="tab" onclick="openTab('Tools')"><a href="#tabs">Tools</a></li>
-            <li id="Assets" role="tab" onclick="openTab('Assets')"><a href="#tabs">Assets</a></li>
-        </menu>
-        <div id="PostsWindow" class="window" role="tabpanel">
             <div class="window-body">
-                <button style="width: 230px">
-                    <li><a href="posts/exceptional_terminology.html">Exceptional Terminology</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="posts/reverse_unravel.html">Fixing Unravel Two bug w/o source code</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="posts/solomonoff_induction.html">Solomonoff Induction</a></li>
-                </button>
+                <p>Hi! This is a homepage of Arseny Morozov💾</p>
             </div>
         </div>
-        <div id="BookmarksWindow" class="window" role="tabpanel" style="display: none">
-            <div class="window-body">
-                <button style="width: 230px">
-                    <li><a href="https://malwareunicorn.org/#/">Malware Unicorn</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://www.fasterthan.life/blog">I am graphics and so can you</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://preshing.com/">Preshing (Concurrency)</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://rigtorp.se/">Erik Rigtorp (HFT)</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://cbloomrants.blogspot.com/">cbloom</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://fabiensanglard.net/">Fabien Sanglard's website</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://blog.s-schoener.com/blog/">Sebastian Schöner's blog</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://ludic.mataroa.blog/">Ludicity</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://danluu.com/">Danluu</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://fgiesen.wordpress.com/">The ryg blog</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://gargaj.github.io/demos-for-dummies/#intro/1">How to start writing an actual
-                            demo in <400 lines</a>
-                    </li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="http://www.sizecoding.org/wiki/Main_Page">SizeCoding.org</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://hugi-code.blogspot.com/">Demos For Dummies</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://in4k.github.io/">in4k demoscene</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://www.demoscene.ru/info/">demoscene.ru</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://hughsk.io/">Hugh Kennedy's shaders</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://www.computerenhance.com/p/table-of-contents">Computer, Enhance!</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://fmhy.net/beginners-guide">The largest collection of free stuff on the internet!</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://systemdesign.io/">systemdesign.io/</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://felixrieseberg.com/">Felix Rieseberg (Anthropic)</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://book.mlc.ai/chapter_introduction/index.html">Machine Learning Compiler</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://sitp.ai/thesis.html">The Structure and Interpretation of Tensor Programs</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://x.com/cabbitar/status/2119392619327590507">RE Any Device With Claude Code</a></li>
-                </button>
-                <button style="width: 230px">
-                    <li><a href="https://hft.md/jane-street/">Jane Street resources</a></li>
-                </button>
+
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    Navigation
+                </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <menu id="NavigationMenu" role="tablist">
+                <li id="Posts" role="tab" aria-selected="true" aria-controls="PostsWindow"><a
+                        href="#PostsWindow">Posts</a></li>
+                <li id="Bookmarks" role="tab" aria-selected="false" aria-controls="BookmarksWindow"><a
+                        href="#BookmarksWindow">Bookmarks</a></li>
+                <li id="Tools" role="tab" aria-selected="false" aria-controls="ToolsWindow"><a
+                        href="#ToolsWindow">Tools</a></li>
+                <li id="Assets" role="tab" aria-selected="false" aria-controls="AssetsWindow"><a
+                        href="#AssetsWindow">Assets</a></li>
+                <li id="Games" role="tab" aria-selected="false" aria-controls="GamesWindow"><a
+                        href="#GamesWindow">Games</a></li>
+            </menu>
+            <div id="PostsWindow" class="window" role="tabpanel" aria-labelledby="Posts">
+                <div class="window-body">
+                    <ul class="link-list">
+                        <li><a href="posts/exceptional_terminology.html">Exceptional Terminology</a></li>
+                        <li><a href="posts/reverse_unravel.html">Fixing Unravel Two bug w/o source code</a></li>
+                        <li><a href="posts/solomonoff_induction.html">Solomonoff Induction</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="BookmarksWindow" class="window" role="tabpanel" aria-labelledby="Bookmarks" hidden>
+                <menu id="BookmarkTopics" class="sub-tabs" role="tablist" aria-label="Bookmark topics">
+                    <li id="BmGraphics" role="tab" aria-selected="true" aria-controls="BmGraphicsPanel"><a
+                            href="#BmGraphicsPanel">Graphics</a></li>
+                    <li id="BmDemoscene" role="tab" aria-selected="false" aria-controls="BmDemoscenePanel"><a
+                            href="#BmDemoscenePanel">Demoscene</a></li>
+                    <li id="BmSystems" role="tab" aria-selected="false" aria-controls="BmSystemsPanel"><a
+                            href="#BmSystemsPanel">Systems</a></li>
+                    <li id="BmSecurity" role="tab" aria-selected="false" aria-controls="BmSecurityPanel"><a
+                            href="#BmSecurityPanel">Security</a></li>
+                    <li id="BmMl" role="tab" aria-selected="false" aria-controls="BmMlPanel"><a
+                            href="#BmMlPanel">ML</a></li>
+                    <li id="BmMisc" role="tab" aria-selected="false" aria-controls="BmMiscPanel"><a
+                            href="#BmMiscPanel">Misc</a></li>
+                </menu>
+                <div id="BmGraphicsPanel" class="window" role="tabpanel" aria-labelledby="BmGraphics">
+                    <div class="window-body">
+                        <ul class="link-list">
+                            <li><a href="https://www.fasterthan.life/blog">I am graphics and so can you</a></li>
+                            <li><a href="https://cbloomrants.blogspot.com/">cbloom</a></li>
+                            <li><a href="https://fabiensanglard.net/">Fabien Sanglard's website</a></li>
+                            <li><a href="https://fgiesen.wordpress.com/">The ryg blog</a></li>
+                            <li><a href="https://hughsk.io/">Hugh Kennedy's shaders</a></li>
+                            <li><a href="https://blog.s-schoener.com/blog/">Sebastian Schöner's blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="BmDemoscenePanel" class="window" role="tabpanel" aria-labelledby="BmDemoscene" hidden>
+                    <div class="window-body">
+                        <ul class="link-list">
+                            <li><a href="https://gargaj.github.io/demos-for-dummies/#intro/1">How to start writing an
+                                    actual demo in &lt;400 lines</a></li>
+                            <li><a href="http://www.sizecoding.org/wiki/Main_Page">SizeCoding.org</a></li>
+                            <li><a href="https://hugi-code.blogspot.com/">Demos For Dummies</a></li>
+                            <li><a href="https://in4k.github.io/">in4k demoscene</a></li>
+                            <li><a href="https://www.demoscene.ru/info/">demoscene.ru</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="BmSystemsPanel" class="window" role="tabpanel" aria-labelledby="BmSystems" hidden>
+                    <div class="window-body">
+                        <ul class="link-list">
+                            <li><a href="https://preshing.com/">Preshing (Concurrency)</a></li>
+                            <li><a href="https://rigtorp.se/">Erik Rigtorp (HFT)</a></li>
+                            <li><a href="https://danluu.com/">Danluu</a></li>
+                            <li><a href="https://www.computerenhance.com/p/table-of-contents">Computer, Enhance!</a>
+                            </li>
+                            <li><a href="https://hft.md/jane-street/">Jane Street resources</a></li>
+                            <li><a href="https://systemdesign.io/">systemdesign.io/</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="BmSecurityPanel" class="window" role="tabpanel" aria-labelledby="BmSecurity" hidden>
+                    <div class="window-body">
+                        <ul class="link-list">
+                            <li><a href="https://malwareunicorn.org/#/">Malware Unicorn</a></li>
+                            <li><a href="https://x.com/cabbitar/status/2119392619327590507">RE Any Device With Claude
+                                    Code</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="BmMlPanel" class="window" role="tabpanel" aria-labelledby="BmMl" hidden>
+                    <div class="window-body">
+                        <ul class="link-list">
+                            <li><a href="https://book.mlc.ai/chapter_introduction/index.html">Machine Learning
+                                    Compiler</a></li>
+                            <li><a href="https://sitp.ai/thesis.html">The Structure and Interpretation of Tensor
+                                    Programs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="BmMiscPanel" class="window" role="tabpanel" aria-labelledby="BmMisc" hidden>
+                    <div class="window-body">
+                        <ul class="link-list">
+                            <li><a href="https://ludic.mataroa.blog/">Ludicity</a></li>
+                            <li><a href="https://felixrieseberg.com/">Felix Rieseberg (Anthropic)</a></li>
+                            <li><a href="https://fmhy.net/beginners-guide">The largest collection of free stuff on the
+                                    internet!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="ToolsWindow" class="window" role="tabpanel" aria-labelledby="Tools" hidden>
+                <div class="window-body">
+                    <ul class="link-list">
+                        <li><a href="https://excalidraw.com/">Handwritten diagrams</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="AssetsWindow" class="window" role="tabpanel" aria-labelledby="Assets" hidden>
+                <div class="window-body">
+                    <ul class="link-list">
+                        <li><a href="https://www.spritecook.ai/blog/sprite-stacking-pixel-art">2D Sprite stacking</a></li>
+                        <li><a href="https://x.com/KenneyNL/status/2116961316627767739">Generated assets</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="GamesWindow" class="window" role="tabpanel" aria-labelledby="Games" hidden>
+                <div class="window-body">
+                    <ul class="link-list">
+                        <li><a href="https://store.steampowered.com/app/780310/">The Riftbreaker</a></li>
+                        <li><a href="https://store.steampowered.com/app/860890/">Factory Town</a></li>
+                        <li><a href="https://store.steampowered.com/app/1127400/">Mindustry</a></li>
+                        <li><a href="https://store.steampowered.com/app/2162800/">Shapez 2</a></li>
+                        <li><a href="https://store.steampowered.com/app/983870/">Foundry</a></li>
+                        <li><a href="https://store.steampowered.com/app/1366540/">Dyson Sphere Program</a></li>
+                        <li><a href="https://store.steampowered.com/app/3012600/">Substructure</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div id="ToolsWindow" class="window" role="tabpanel" style="display: none">
-            <div class="window-body">
-                <button style="width: 230px">
-                    <li><a href="https://excalidraw.com/">Handwritten diagrams</a></li>
-                </button>
-            </div>
-        </div>
-        <div id="AssetsWindow" class="window" role="tabpanel" style="display: none">
-            <div class="window-body">
-                <button style="width: 230px">
-                    <li><a href="https://www.spritecook.ai/blog/sprite-stacking-pixel-art">2D Sprite stacking</a></li>
-                </button>
-            </div>
-        </div>
-    </div>
+    </main>
+
+    <script>
+        function setupTabs(tablist) {
+            const tabs = tablist.querySelectorAll('[role="tab"]');
+
+            function selectTab(selected) {
+                tabs.forEach((tab) => {
+                    const isSelected = tab === selected;
+                    tab.setAttribute('aria-selected', String(isSelected));
+                    document.getElementById(tab.getAttribute('aria-controls')).hidden = !isSelected;
+                });
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => selectTab(tab));
+            });
+        }
+
+        document.querySelectorAll('[role="tablist"]').forEach(setupTabs);
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,116 @@
+/* Shared layout for the brocbyte blog. */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: clamp(12px, 4vw, 32px);
+}
+
+/* Centered column that follows the viewport instead of a fixed 250px width. */
+.page {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 3vw, 28px);
+}
+
+.page > .window {
+    width: 100%;
+}
+
+/* Link lists (posts, bookmarks, tools, assets).
+   One <li><a> per entry; CSS supplies the retro "button" look. */
+.link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    gap: 6px;
+}
+
+.link-list a {
+    display: block;
+    padding: 6px 8px;
+    color: #222;
+    font-family: "Pixelated MS Sans Serif", Arial;
+    font-size: 11px;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+.link-list a:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+}
+
+.link-list a:focus-visible {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Article pages. */
+.post {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.post img,
+.post video,
+.post iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+.post pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.post blockquote {
+    margin-inline: 0;
+    padding-left: 1em;
+    border-left: 3px solid silver;
+}
+
+.post h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.post h3 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    line-height: 1.2;
+}
+
+.post h4 {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    line-height: 1.2;
+}
+
+.post-back {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Give the tabs a little more room on narrow screens. */
+@media (max-width: 420px) {
+    menu[role="tablist"] > li > a {
+        margin: 6px 4px;
+    }
+}
