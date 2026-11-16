@@ -1,4 +1,30 @@
-/* Shared layout for the brocbyte blog. */
+/* brocbyte blog — Warcraft III-inspired UI.
+   Visual language and textures adapted from https://wc3ui.banteg.xyz/ */
+
+@font-face {
+    font-family: "Friz Quadrata";
+    src: url("fonts/FRIZQT__.TTF") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --wc3-bg: #08080f;
+    --wc3-panel-bg: #0b0e18;
+    --wc3-gold: #fcd312;
+    --wc3-gold-bright: #ffe680;
+    --wc3-gold-dark: #cca300;
+    --wc3-gold-dim: #7f6212;
+    --wc3-white: #eceff7;
+    --wc3-text: #d3ddfb;
+    --wc3-text-dim: #9aa4c0;
+    --wc3-blue: #4a7abf;
+    --wc3-glow: #6db3f2;
+    --wc3-font: "Friz Quadrata", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --wc3-mono: "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+    --wc3-panel-border: 18px;
+}
 
 *,
 *::before,
@@ -6,68 +32,534 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: clamp(12px, 4vw, 32px);
+html {
+    color-scheme: dark;
 }
 
-/* Centered column that follows the viewport instead of a fixed 250px width. */
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 32px);
+    background:
+        radial-gradient(ellipse 90% 55% at 50% -8%, rgba(47, 74, 128, 0.3), transparent 65%),
+        radial-gradient(ellipse 70% 40% at 50% 112%, rgba(90, 64, 12, 0.18), transparent 70%),
+        var(--wc3-bg);
+    color: var(--wc3-text);
+    font-family: var(--wc3-font);
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.85);
+}
+
+::selection {
+    background: rgba(252, 211, 18, 0.35);
+    color: #fff;
+}
+
+/* Warcraft-style gold scrollbar. */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8a6a12 #0c0f16;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0f16;
+    border: 1px solid #252d42;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d5ad24, #7b5d0e 60%, #a78015);
+    border: 1px solid #201700;
+    box-shadow: inset 1px 1px 0 rgba(255, 240, 160, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #fcd312, #98730f);
+}
+
+/* Page column. */
 .page {
     width: 100%;
-    max-width: 780px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: clamp(16px, 3vw, 28px);
+    gap: clamp(20px, 3.5vw, 32px);
 }
 
-.page > .window {
+/* ---- Panels --------------------------------------------------------- */
+
+.wc3-window {
+    position: relative;
     width: 100%;
+    border: var(--wc3-panel-border) solid transparent;
+    border-image-source: url("img/ui/panel-border.png");
+    border-image-slice: 64;
+    border-image-width: var(--wc3-panel-border);
+    border-image-repeat: round;
+    background-color: var(--wc3-panel-bg);
+    background-image:
+        linear-gradient(180deg, rgba(8, 10, 18, 0.72), rgba(6, 8, 14, 0.9)),
+        url("img/ui/stone.png");
+    background-size: auto, 256px 256px;
+    background-repeat: repeat;
+    background-clip: padding-box;
+    box-shadow:
+        inset 0 0 0 1px rgba(252, 211, 18, 0.42),
+        inset 0 0 24px rgba(0, 0, 0, 0.55),
+        0 0 0 1px #000,
+        0 20px 46px rgba(0, 0, 0, 0.7);
 }
 
-/* Link lists (posts, bookmarks, tools, assets).
-   One <li><a> per entry; CSS supplies the retro "button" look. */
-.link-list {
+.wc3-window-inner {
+    padding: clamp(20px, 4vw, 34px);
+}
+
+.wc3-window-header {
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+    text-align: center;
+}
+
+.wc3-window-title {
+    margin: 0;
+    color: var(--wc3-gold);
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-shadow:
+        0 0 14px rgba(252, 211, 18, 0.28),
+        1px 1px 0 #000,
+        2px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.wc3-window-header::after {
+    content: "";
+    display: block;
+    width: min(340px, 76%);
+    height: 2px;
+    margin: 10px auto 0;
+    background:
+        linear-gradient(90deg, transparent, rgba(204, 163, 0, 0.15) 12%, var(--wc3-gold-dark) 50%, rgba(204, 163, 0, 0.15) 88%, transparent);
+    box-shadow: 0 1px 0 #000;
+}
+
+/* ---- Intro / hero --------------------------------------------------- */
+
+.wc3-hero {
+    text-align: center;
+}
+
+.wc3-hero .wc3-window-inner {
+    padding: clamp(30px, 6vw, 52px) clamp(18px, 5vw, 48px);
+}
+
+.wc3-kicker {
+    margin: 0 0 6px;
+    color: var(--wc3-text-dim);
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.wc3-logo {
+    margin: 0 0 14px;
+    color: var(--wc3-gold);
+    font-size: clamp(2.4rem, 8vw, 4.4rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-shadow:
+        0 2px 0 #6b4300,
+        0 4px 0 #2d1c00,
+        0 0 22px rgba(252, 211, 18, 0.35),
+        2px 2px 0 #000;
+}
+
+.wc3-hero-text {
+    margin: 0 auto;
+    max-width: 44ch;
+    color: var(--wc3-white);
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    line-height: 1.5;
+}
+
+/* ---- Faction tabs --------------------------------------------------- */
+
+.wc3-tabs,
+.wc3-subtabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 0 clamp(18px, 3vw, 26px);
+    padding: 0;
+    list-style: none;
+}
+
+.wc3-tab {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 170px;
+    height: auto;
+    aspect-ratio: 162 / 32;
+    margin: 0;
+    padding: 0 12px 2px;
+    border: 0;
+    border-radius: 0;
+    background: url("img/ui/tab-normal.png") center / 100% 100% no-repeat;
+    color: var(--wc3-white);
+    font-family: var(--wc3-font);
+    font-size: clamp(0.78rem, 1.8vw, 1rem);
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+}
+
+.wc3-tab::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("img/ui/tab-glow.png") center / 100% 100% no-repeat;
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 80ms linear;
+}
+
+.wc3-tab:hover,
+.wc3-tab:focus-visible {
+    color: var(--wc3-gold);
+}
+
+.wc3-tab:hover::after,
+.wc3-tab:focus-visible::after {
+    opacity: 0.9;
+}
+
+.wc3-tab[aria-selected="true"] {
+    background-image: url("img/ui/tab-active.png");
+    color: var(--wc3-gold);
+}
+
+.wc3-tab[aria-selected="true"]::after {
+    opacity: 0.45;
+}
+
+.wc3-tab:disabled {
+    background-image: url("img/ui/tab-disabled.png");
+    color: #8c8c8c;
+    cursor: default;
+}
+
+.wc3-tab:disabled::after {
+    opacity: 0;
+}
+
+.wc3-tab:focus-visible {
+    outline: 1px solid var(--wc3-gold);
+    outline-offset: 2px;
+}
+
+/* Compact options-menu buttons used for the bookmark sub-tabs. */
+.wc3-subtab {
+    min-width: 96px;
+    height: 38px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 0;
+    background: url("img/ui/option-button.png") center / 100% 100% no-repeat;
+    color: var(--wc3-gold);
+    font-family: var(--wc3-font);
+    font-size: 0.9rem;
+    line-height: 1;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+    filter: saturate(0.7) brightness(0.82);
+    transition: filter 80ms linear;
+}
+
+.wc3-subtab:hover,
+.wc3-subtab:focus-visible {
+    filter: saturate(1.15) brightness(1.18);
+    color: var(--wc3-gold-bright);
+}
+
+.wc3-subtab[aria-selected="true"] {
+    filter: saturate(1.2) brightness(1.2);
+    color: var(--wc3-gold-bright);
+    box-shadow: 0 0 14px rgba(252, 211, 18, 0.25);
+}
+
+.wc3-subtab:disabled {
+    filter: grayscale(0.8) brightness(0.62);
+    color: #8c8c8c;
+    cursor: default;
+}
+
+.wc3-subtab:focus-visible {
+    outline: 1px solid var(--wc3-gold);
+    outline-offset: 2px;
+}
+
+/* ---- Tab panels and link lists ------------------------------------- */
+
+.wc3-tabpanel {
+    animation: wc3-fade-in 160ms ease-out;
+}
+
+.wc3-tabpanel[hidden] {
+    display: none !important;
+}
+
+.wc3-link-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+    column-gap: clamp(12px, 2.5vw, 26px);
 }
 
-.link-list a {
-    display: block;
-    padding: 6px 8px;
-    color: #222;
-    font-family: "Pixelated MS Sans Serif", Arial;
-    font-size: 11px;
-    line-height: 1.5;
+.wc3-link-list li {
+    min-width: 0;
+}
+
+.wc3-link-list a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 42px;
+    padding: 8px 10px;
+    color: var(--wc3-text);
+    font-size: 0.96rem;
+    line-height: 1.35;
     text-decoration: none;
     overflow-wrap: anywhere;
-    background: silver;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    border-bottom: 1px solid rgba(204, 163, 0, 0.18);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    transition: color 80ms linear, background 80ms linear, border-color 80ms linear;
 }
 
-.link-list a:active {
-    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+.wc3-link-list a::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 7px;
+    height: 7px;
+    background: linear-gradient(135deg, var(--wc3-gold-bright), #7a5a09 70%);
+    transform: rotate(45deg);
+    box-shadow:
+        0 0 7px rgba(252, 211, 18, 0.45),
+        1px 1px 0 #000;
 }
 
-.link-list a:focus-visible {
-    outline: 1px dotted #000;
-    outline-offset: -4px;
+.wc3-link-list a:hover,
+.wc3-link-list a:focus-visible {
+    color: var(--wc3-gold);
+    background: linear-gradient(90deg, rgba(252, 211, 18, 0.13), rgba(252, 211, 18, 0) 82%);
+    border-bottom-color: rgba(252, 211, 18, 0.55);
 }
 
-[hidden] {
-    display: none !important;
+.wc3-link-list a:focus-visible {
+    outline: 1px solid var(--wc3-gold);
+    outline-offset: -2px;
 }
 
-/* Article pages. */
+@keyframes wc3-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ---- Article pages -------------------------------------------------- */
+
+body.post-page {
+    padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 32px);
+}
+
 .post {
-    max-width: 42rem;
+    width: 100%;
+    max-width: 860px;
     margin: 0 auto;
-    font-size: 15px;
-    line-height: 1.6;
+    padding: clamp(22px, 5vw, 44px);
+    border: var(--wc3-panel-border) solid transparent;
+    border-image-source: url("img/ui/panel-border.png");
+    border-image-slice: 64;
+    border-image-width: var(--wc3-panel-border);
+    border-image-repeat: round;
+    background-color: var(--wc3-panel-bg);
+    background-image:
+        linear-gradient(180deg, rgba(8, 10, 18, 0.78), rgba(6, 8, 14, 0.92)),
+        url("img/ui/stone.png");
+    background-size: auto, 256px 256px;
+    background-repeat: repeat;
+    background-clip: padding-box;
+    box-shadow:
+        inset 0 0 0 1px rgba(252, 211, 18, 0.42),
+        inset 0 0 24px rgba(0, 0, 0, 0.5),
+        0 0 0 1px #000,
+        0 20px 46px rgba(0, 0, 0, 0.7);
+    font-size: 16.5px;
+    line-height: 1.72;
+    overflow-wrap: break-word;
+}
+
+.post-back {
+    margin: 0 0 clamp(20px, 4vw, 32px);
+    font-size: 0.92rem;
+}
+
+.post-back a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 40px;
+    padding: 0 20px;
+    background: url("img/ui/option-button.png") center / 100% 100% no-repeat;
+    color: var(--wc3-gold);
+    text-decoration: none;
+    line-height: 1;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.95);
+}
+
+.post-back a:hover,
+.post-back a:focus-visible {
+    color: var(--wc3-gold-bright);
+    filter: brightness(1.25) saturate(1.2);
+}
+
+.post-back a:focus-visible {
+    outline: 1px solid var(--wc3-gold);
+    outline-offset: 3px;
+}
+
+.post h2,
+.post h3,
+.post h4 {
+    color: var(--wc3-gold);
+    font-weight: 400;
+    line-height: 1.25;
+    text-shadow:
+        0 0 12px rgba(252, 211, 18, 0.16),
+        1px 1px 0 #000,
+        2px 2px 0 rgba(0, 0, 0, 0.55);
+}
+
+.post h2 {
+    margin: 1.7em 0 0.55em;
+    padding-bottom: 0.3em;
+    font-size: clamp(1.6rem, 5vw, 2.25rem);
+    border-bottom: 1px solid rgba(204, 163, 0, 0.4);
+}
+
+.post h3 {
+    margin: 1.45em 0 0.45em;
+    font-size: clamp(1.28rem, 4vw, 1.65rem);
+}
+
+.post h4 {
+    margin: 1.3em 0 0.4em;
+    color: var(--wc3-gold-bright);
+    font-size: clamp(1.08rem, 3vw, 1.25rem);
+}
+
+.post p {
+    margin: 0 0 1em;
+    color: var(--wc3-text);
+}
+
+.post a {
+    color: var(--wc3-gold);
+    text-decoration: underline;
+    text-decoration-color: rgba(252, 211, 18, 0.45);
+    text-underline-offset: 2px;
+}
+
+.post a:hover,
+.post a:focus-visible {
+    color: var(--wc3-gold-bright);
+    text-decoration-color: var(--wc3-gold-bright);
+}
+
+.post a:focus-visible {
+    outline: 1px solid var(--wc3-gold);
+    outline-offset: 2px;
+}
+
+.post em {
+    color: var(--wc3-white);
+}
+
+.post strong {
+    color: #fff;
+}
+
+.post ul,
+.post ol {
+    margin: 0 0 1em;
+    padding-left: 1.4em;
+}
+
+.post li {
+    margin: 0.25em 0;
+}
+
+.post blockquote {
+    margin: 1.4em 0;
+    padding: 0.75em 1.15em;
+    border-left: 2px solid var(--wc3-gold-dark);
+    background: rgba(252, 211, 18, 0.05);
+    color: #c8d0e8;
+}
+
+.post blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.post pre {
+    max-width: 100%;
+    margin: 1.2em 0;
+    padding: 14px 16px;
+    overflow-x: auto;
+    background: #05060a;
+    border: 1px solid rgba(204, 163, 0, 0.32);
+    box-shadow: inset 0 0 22px rgba(0, 0, 0, 0.85);
+    line-height: 1.55;
+}
+
+.post code {
+    font-family: var(--wc3-mono);
+    font-size: 0.9em;
+    color: var(--wc3-gold-bright);
+}
+
+.post pre code {
+    color: #c8d0e8;
+}
+
+.post .hljs-number,
+.post .hljs-symbol {
+    color: var(--wc3-gold);
+}
+
+.post .hljs-built_in {
+    color: #8fc1ff;
 }
 
 .post img,
@@ -77,40 +569,49 @@ body {
     height: auto;
 }
 
-.post pre {
-    max-width: 100%;
-    overflow-x: auto;
+.post img {
+    display: block;
+    margin: 1.3em auto;
+    border: 1px solid rgba(204, 163, 0, 0.4);
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.35),
+        0 12px 30px rgba(0, 0, 0, 0.55);
 }
 
-.post blockquote {
-    margin-inline: 0;
-    padding-left: 1em;
-    border-left: 3px solid silver;
+/* Keep keyboard focus obvious everywhere. */
+:focus-visible {
+    outline-color: var(--wc3-gold);
 }
 
-.post h2 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
-    line-height: 1.2;
+/* ---- Responsive ----------------------------------------------------- */
+
+@media (max-width: 560px) {
+    :root {
+        --wc3-panel-border: 18px;
+    }
+
+    .wc3-tab {
+        flex: 0 0 calc(50% - 3px);
+        max-width: none;
+    }
+
+    .wc3-subtab {
+        min-width: 84px;
+        height: 34px;
+        padding: 0 12px;
+        font-size: 0.82rem;
+    }
+
+    .post {
+        font-size: 16px;
+    }
 }
 
-.post h3 {
-    font-size: clamp(1.25rem, 5vw, 2rem);
-    line-height: 1.2;
-}
-
-.post h4 {
-    font-size: clamp(1.1rem, 4vw, 1.5rem);
-    line-height: 1.2;
-}
-
-.post-back {
-    margin: 0;
-    font-size: 13px;
-}
-
-/* Give the tabs a little more room on narrow screens. */
-@media (max-width: 420px) {
-    menu[role="tablist"] > li > a {
-        margin: 6px 4px;
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
     }
 }
